@@ -1,0 +1,16 @@
+Concernant notre petit projet aec node : 
+
+Etape 1 : installation de node.js et l'editeur 
+
+Etape 2 : affichage de "Hello World " avec node , 
+
+Etape 3 : creation du fichier package.json avvec la commande 'npm init',
+
+Etape 4 : Installation de Epress en tant que dependance aecla commande 'npm install express --save',
+
+    => app.get('/', (req, res) => res.send('Hello, Express ! 👍'))
+    *Explication du code : le get() prends en compte deux paramettres , le ~ '/' ~ et le ~ (req, res) => res.send('Hello, Express ! 👍') ~
+    le '/' : correspond au chemin de terminaison de notre API ;
+    le (req, res) => res.send('Hello, Express ! 👍') : 
+        * req : correspond a un objet request 
+        * res : response ou reponse de la requete c-a-d l'objet qu'on doit enoyer a notre client depuis express ;
