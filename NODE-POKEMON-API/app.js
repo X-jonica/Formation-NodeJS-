@@ -12,6 +12,13 @@ app.get('/api/pokemons/:id', (req, res) => {
     res.send(`Vous avez demandé le pokemon n°${id}`);
 });
 
+// esseyer plusieurs parametres
+app.get('/api/pokemons/:id/:name', (req, res) => {
+    const id = req.params.id;
+    const name = req.params.name;
+    res.send(`Vous avez demandé le pokemon n°${id} qui est ${name}`)
+})
+
 app.listen(port, () => {
     console.log(`Notre servveur express est demaréé sous : http://localhost:${port}`);
 });
