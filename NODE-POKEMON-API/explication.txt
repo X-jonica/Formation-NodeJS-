@@ -14,3 +14,6 @@ Etape 4 : Installation de Epress en tant que dependance aecla commande 'npm inst
     le (req, res) => res.send('Hello, Express ! 👍') : 
         * req : correspond a un objet request 
         * res : response ou reponse de la requete c-a-d l'objet qu'on doit enoyer a notre client depuis express ;
+
+Etape 5 : installation de nodemon avec la commande 'npm install nodemon --save-dev' pour evviter de recharger soit meme le serveur a chaque modification ,
+
