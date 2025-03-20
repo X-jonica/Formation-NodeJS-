@@ -11,6 +11,8 @@ app.get("/", (req, res) => {
 // on utilise la liste de pokemons dans notre point de termnaison  :
 app.get("/api/pokemons/:id", (req, res) => {
   const id = parseInt(req.params.id);
+  // pourquoi e parseInt ? => c'est pour convertir le id dans notre point de terminaison en int pour qu'elle correspond au condition si dessous
+
   const pokemon = pokemons.find((pokemon) => pokemon.id === id);
   res.send(`Vous avez demandé le pokemon ${pokemon.name}.`);
 });
