@@ -1,24 +1,20 @@
-const express = require('express');
+const express = require("express");
+let pokemons = require("./mock-pokemon");
 
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send("Hello , Express ! 😒");
+app.get("/", (req, res) => {
+  res.send("Hello , Express ! 😒");
 });
 
-app.get('/api/pokemons/:id', (req, res) => {
-    const id = req.params.id;
-    res.send(`Vous avez demandé le pokemon n°${id}`);
+// on utilise la liste de pokemons dans notre point de termnaison  :
+app.get("/api/pokemons/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const pokemon = pokemons.find((pokemon) => pokemon.id === id);
+  res.send(`Vous avez demandé le pokemon ${pokemon.name}.`);
 });
-
-// esseyer plusieurs parametres
-app.get('/api/pokemons/:id/:name', (req, res) => {
-    const id = req.params.id;
-    const name = req.params.name;
-    res.send(`Vous avez demandé le pokemon n°${id} qui est ${name}`)
-})
 
 app.listen(port, () => {
-    console.log(`Notre servveur express est demaréé sous : http://localhost:${port}`);
+  console.log(`Notre application est demaréé sur : http://localhost:${port}`);
 });
