@@ -17,3 +17,12 @@ Etape 4 : Installation de Epress en tant que dependance aecla commande 'npm inst
 
 Etape 5 : installation de nodemon avec la commande 'npm install nodemon --save-dev' pour evviter de recharger soit meme le serveur a chaque modification ,
 
+C'EST QUOI LE ROLE D'UN API Rest ???????
+--> Intercepter une requette Http, puis returner une reponse Http contenant les informations demandés par le client au format JSON ;
+
+Reponse HTTP :
+    --> Les Données ;
+    --> Le format JSON ;
+    --> Le type MIME ; (ajouter sous forme d'une entete)
+    --> Le code de status (ex : 200 ,  404 not found)
+
