@@ -26,3 +26,5 @@ Reponse HTTP :
     --> Le type MIME ; (ajouter sous forme d'une entete)
     --> Le code de status (ex : 200 ,  404 not found)
 
+extension chrome : JSON Viewer , pour ameliorer l'afichage en format json dans le naigateur;
+
