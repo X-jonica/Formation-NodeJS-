@@ -28,3 +28,13 @@ Reponse HTTP :
 
 extension chrome : JSON Viewer , pour ameliorer l'afichage en format json dans le naigateur;
 
+---------------- Initiation au Middleware ----------------
+
+les Middleware A : qu'est ce que c'est ????
+-->  ce sont simplement des fonctions javascript capable d iteragir avec les requettes entrante et sortante de notre ApiRest ,
+--> Les Middleware A permet d'appliquer un traitement au requette HTTP entrante et sortante, fonctionne par dessus notre point de terminaison existant 
+
+qu'est ce qui les rends un peu speciaux ????
+--> ils peuvent acceder aux objet "req" et "res" d'Express qui ouvre la possiblite a toute un cas d'utilisation possible ;
+
+En resume, ce sont comme des fonctions javascript qui ont accès a certains données d'Express
