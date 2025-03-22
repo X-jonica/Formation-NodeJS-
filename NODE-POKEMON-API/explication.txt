@@ -38,3 +38,10 @@ qu'est ce qui les rends un peu speciaux ????
 --> ils peuvent acceder aux objet "req" et "res" d'Express qui ouvre la possiblite a toute un cas d'utilisation possible ;
 
 En resume, ce sont comme des fonctions javascript qui ont accès a certains données d'Express
+
+---------------- Il existe 05 types de Middleware ----------------
+--> 01: Le Middleware d'application,
+--> 02: Le Middleware du routeur,
+--> 03: Le Middleware de traitement d'erreurs , 
+--> 04: Le Middleware integré ,
+--> 05: Le Middleware tiers

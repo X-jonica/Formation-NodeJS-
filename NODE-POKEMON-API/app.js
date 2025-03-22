@@ -5,6 +5,12 @@ const { success } = require("./helper");
 const app = express();
 const port = 3000;
 
+// creation de notre propre Midlleware , recuperer tous les URL traité par le navigateur 😮
+app.use((req, res, next) => {
+  console.log(`URL : ${req.url}`);
+  next();
+})
+
 // hello Express 
 app.get("/", (req, res) => res.send("Hello , Express ! 😒"));
 
