@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan")
+const favicon = require("serve-favicon");
 let pokemons = require("./mock-pokemon");
 const { success } = require("./helper");
 
@@ -7,7 +8,9 @@ const app = express();
 const port = 3000;
 
 // Middleware existant 
-app.use(morgan("dev"));
+app
+  .use(favicon(__dirname+ '/favicon.ico'))
+  .use(morgan("dev"));
 
 // hello Express 
 app.get("/", (req, res) => res.send("Hello , Express ! 😒"));

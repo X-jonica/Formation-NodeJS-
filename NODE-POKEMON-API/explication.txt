@@ -51,3 +51,7 @@ En resume, ce sont comme des fonctions javascript qui ont accès a certains donn
 
 ---------------- Installation d'une Middleware deja existant ! ----------------
 { morgan } avec la comande : npm install morgan --save-dev 
+
+* Note sur les Middleware: tous les Middleware sont reliés et connectés entre eux
+
+installation d'une Middleware pour ajouter une favIcon : npm install serve-favicon --save
