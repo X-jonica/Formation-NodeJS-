@@ -31,8 +31,8 @@ extension chrome : JSON Viewer , pour ameliorer l'afichage en format json dans l
 ---------------- Initiation au Middleware ----------------
 
 les Middleware A : qu'est ce que c'est ????
--->  ce sont simplement des fonctions javascript capable d iteragir avec les requettes entrante et sortante de notre ApiRest ,
---> Les Middleware A permet d'appliquer un traitement au requette HTTP entrante et sortante, fonctionne par dessus notre point de terminaison existant 
+-->  ce sont simplement des fonctions javascript capable d'iteragir avec les requettes entrante et sortante de notre APIRest ,
+--> Les Middleware permet d'appliquer un traitement au requette HTTP entrante et sortante, fonctionne par dessus notre point de terminaison existant 
 
 qu'est ce qui les rends un peu speciaux ????
 --> ils peuvent acceder aux objet "req" et "res" d'Express qui ouvre la possiblite a toute un cas d'utilisation possible ;
@@ -45,3 +45,9 @@ En resume, ce sont comme des fonctions javascript qui ont accès a certains donn
 --> 03: Le Middleware de traitement d'erreurs , 
 --> 04: Le Middleware integré ,
 --> 05: Le Middleware tiers
+
+---------------- On a creer notre propre Middleware ----------------
+--> Charger d' afficher l'URL des requettes entrantes vers botre APIRest , pratique pour debugger a la main 
+
+---------------- Installation d'une Middleware deja existant ! ----------------
+{ morgan } avec la comande : npm install morgan --save-dev 
