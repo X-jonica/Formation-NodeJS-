@@ -27,14 +27,14 @@ app.get("/api/pokemons", (req, res) => {
   res.json(success(message, pokemons));
 });
 
-// premere methode post 
-  app.post('/api/pokemons', (req, res) => {
-    const id = 123 ;
-    const pokemonCreated = {...req.body, ...{id: id , created: new Date()}};
-    pokemons.push(pokemonCreated);
-    const message = `le pokemon ${pokemonCreated.name} a été bien créé !`;
-    res.json(success(message, pokemonCreated))
-  })
+// premere methode post
+app.post("/api/pokemons", (req, res) => {
+  const id = getUniqueId(pokemons);
+  const createdPokemons = { ...req.body, ...{ id: id, created: new Date() } };
+  pokemons.push(createdPokemons);
+  const message = `Le pokemon ${createdPokemons.name} a été créé !`;
+  res.json(success(message, pokemons));
+});
 
 app.listen(port, () => {
   console.log(`Notre application est demaréé sur : http://localhost:${port}`);
