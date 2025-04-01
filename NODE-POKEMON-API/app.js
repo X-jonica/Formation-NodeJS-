@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+const bodyParser = require("body-parser");
 const favicon = require("serve-favicon");
 let pokemons = require("./mock-pokemon");
 const { success, getUniqueId } = require("./helper");
@@ -8,7 +9,10 @@ const app = express();
 const port = 3000;
 
 // Middleware existant
-app.use(favicon(__dirname + "/favicon.ico")).use(morgan("dev"));
+app
+  .use(favicon(__dirname + "/favicon.ico"))
+  .use(morgan("dev"))
+  .use(bodyParser.json()); //donc ce ligne va parser tous les donner en entré dans notre application en format json
 
 // hello Express
 app.get("/", (req, res) => res.send("Hello , Express ! 😒"));
@@ -36,6 +40,7 @@ app.post("/api/pokemons", (req, res) => {
   res.json(success(message, pokemons));
 });
 
+// ecoute du port
 app.listen(port, () => {
   console.log(`Notre application est demaréé sur : http://localhost:${port}`);
 });
