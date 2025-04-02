@@ -31,7 +31,7 @@ app.get("/api/pokemons", (req, res) => {
   res.json(success(message, pokemons));
 });
 
-// premere methode post
+// premiere methode post
 app.post("/api/pokemons", (req, res) => {
   const id = getUniqueId(pokemons);
   const createdPokemons = { ...req.body, ...{ id: id, created: new Date() } };
@@ -39,6 +39,18 @@ app.post("/api/pokemons", (req, res) => {
   const message = `Le pokemon ${createdPokemons.name} a été créé !`;
   res.json(success(message, pokemons));
 });
+
+// initiation a la methode put
+app.put("/api/pokemons/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const pokemonUpdated = { ...req.body, id: id };
+  pokemons = pokemons.map((pokemon) => {
+    return pokemon.id == id ? pokemonUpdated : pokemon;
+  });
+  const message = `Le pokemon ${pokemonUpdated.name} a bien ete mis a jour !`;
+  res.json(success(message, pokemonUpdated));
+});
+
 
 // ecoute du port
 app.listen(port, () => {
