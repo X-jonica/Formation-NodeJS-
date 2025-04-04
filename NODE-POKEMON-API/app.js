@@ -40,7 +40,7 @@ app.post("/api/pokemons", (req, res) => {
   res.json(success(message, pokemons));
 });
 
-// initiation a la methode put
+// methode put
 app.put("/api/pokemons/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const pokemonUpdated = { ...req.body, id: id };
@@ -51,6 +51,14 @@ app.put("/api/pokemons/:id", (req, res) => {
   res.json(success(message, pokemonUpdated));
 });
 
+// tester une methode delete 
+app.delete('/api/pokemons/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const pokemonDelete = pokemons.find(pokemon => pokemon.id == id)
+  pokemons.filter(pokemon => pokemon.id !== id)
+  const message = `Le pokemon ${pokemonDelete.name} a bien ete supprimé !`
+  res.json(success(message, pokemonDelete))
+})
 
 // ecoute du port
 app.listen(port, () => {
