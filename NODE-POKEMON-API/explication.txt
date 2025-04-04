@@ -57,3 +57,21 @@ En resume, ce sont comme des fonctions javascript qui ont accès a certains donn
 installation d'une Middleware pour ajouter une favIcon : npm install serve-favicon --save
 
 installation d'une Middleware pour la transformation d'une chaine de caractere en JSON : npm install body-parser --save
+
+premiere partie terminé ! les chose serieux vont enfin arrivés , j ai hate !!!
+
+- INITIATION A L'UTILISATION DE XAMPP POUR INTERAGIR AVEC ! -
+
+Installation de Xampp , 
+
+c' quoi un ORM : Object Relationnal Mapping , c est une technique de programmation puissante qui permet de convertir des base de donnees avec une language comme javascript
+
+Avantages ORM :
+    * Pas besoins de connaitre le SQL ;
+    * On utilise le JAVASCRIPT ;
+    * Abstraction de la base de données (MariaDB, PostgresQL, SGLite): on peut donc changer de base de données sans changer la requete SQL ;
+    * On manipule de simples objets Javascript ;
+    * Requetes simples : findAll, findOne, etc
+
+choix de l'ORM : sequelize ==> installation : npm install sequelize --save 
+
