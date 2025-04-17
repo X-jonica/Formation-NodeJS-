@@ -53,3 +53,8 @@ installation d une ORM : sequelize avec npm install sequelize --save
 
 installation d une driver pg pour relier notre backend a notre base de données : npm install pg --save
 ou avec mariaDB c est : npm install mariadb --save
+
+
+Architecture de notre backend : * Nos points de terminaison ;
+                                * Le demarage de notre serveur;
+                                * L'interaction avec notre BD avec sequelize;
