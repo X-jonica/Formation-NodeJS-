@@ -52,3 +52,4 @@ installation d'une Middleware pour ajouter une favIcon : npm install serve-favic
 installation d une ORM : sequelize avec npm install sequelize --save 
 
 installation d une driver pg pour relier notre backend a notre base de données : npm install pg --save
+ou avec mariaDB c est : npm install mariadb --save
