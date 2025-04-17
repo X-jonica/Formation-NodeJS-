@@ -1,32 +1,39 @@
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const Sequelize = require('sequelize');
+const {Sequelize, DataTypes} = require("sequelize");
 const favicon = require("serve-favicon");
 let pokemons = require("./mock-pokemon");
 const { success, getUniqueId } = require("./helper");
+const PokemonModel = require("./src/models/pokemon");
 
 const app = express();
 const port = 3000;
 
-const sequelize = new Sequelize(
-  'pokedex',
-  'root',
-  '',
-  {
-    host: 'localhost',
-    dialect: 'mariadb',
-    dialectOptions: {
-      timezone: 'Etc/GMT-2'
-    },
-    logging: false
-  }
-)
+const sequelize = new Sequelize("pokedex", "root", "", {
+  host: "localhost",
+  dialect: "mariadb",
+  dialectOptions: {
+    timezone: "Etc/GMT-2",
+  },
+  logging: false,
+});
 
-// tester la connexion avec la bd 
-sequelize.authenticate()
-  .then(_ => console.log('La connexion a la base de donnée a bien été etablie'))
-  .catch(error => console.error(`Impossible de se connecter a la base de données : ${error}`))
+// tester la connexion avec la bd
+sequelize
+  .authenticate()
+  .then((_) =>
+    console.log("La connexion a la base de donnée a bien été etablie")
+  )
+  .catch((error) =>
+    console.error(`Impossible de se connecter a la base de données : ${error}`)
+  );
+
+// synchronisation de notre modele sequelise avec notre base de données 
+const pokemon = PokemonModel(sequelize, DataTypes);
+
+sequelize.sync({force: true})
+.then(_ => console.log("La base de donnée 'Pokedex' a été bine synchronisé"))
 
 
 // Middleware existant
@@ -72,14 +79,14 @@ app.put("/api/pokemons/:id", (req, res) => {
   res.json(success(message, pokemonUpdated));
 });
 
-// tester une methode delete 
-app.delete('/api/pokemons/:id', (req, res) => {
+// tester une methode delete
+app.delete("/api/pokemons/:id", (req, res) => {
   const id = parseInt(req.params.id);
-  const pokemonDelete = pokemons.find(pokemon => pokemon.id == id)
-  pokemons.filter(pokemon => pokemon.id !== id)
-  const message = `Le pokemon ${pokemonDelete.name} a bien ete supprimé !`
-  res.json(success(message, pokemonDelete))
-})
+  const pokemonDelete = pokemons.find((pokemon) => pokemon.id == id);
+  pokemons.filter((pokemon) => pokemon.id !== id);
+  const message = `Le pokemon ${pokemonDelete.name} a bien ete supprimé !`;
+  res.json(success(message, pokemonDelete));
+});
 
 // ecoute du port
 app.listen(port, () => {
