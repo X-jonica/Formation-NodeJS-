@@ -12,7 +12,7 @@ const port = 3000;
 app
   .use(favicon(__dirname + "/favicon.ico"))
   .use(morgan("dev"))
-  .use(bodyParser.json()); //donc ce ligne va parser tous les donner en entré dans notre application en format json
+  .use(bodyParser.json()); //donc ce ligne va parser tous les données en entré dans notre application en format json
 
 // hello Express
 app.get("/", (req, res) => res.send("Hello , Express ! 😒"));

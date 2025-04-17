@@ -1,4 +1,4 @@
-Concernant notre petit projet aec node : 
+Concernant notre petit projet avec node : 
 
 Etape 1 : installation de node.js et l'editeur 
 
@@ -7,13 +7,6 @@ Etape 2 : affichage de "Hello World " avec node ,
 Etape 3 : creation du fichier package.json avvec la commande 'npm init',
 
 Etape 4 : Installation de Epress en tant que dependance aecla commande 'npm install express --save',
-
-    => app.get('/', (req, res) => res.send('Hello, Express ! 👍'))
-    *Explication du code : le get() prends en compte deux paramettres , le ~ '/' ~ et le ~ (req, res) => res.send('Hello, Express ! 👍') ~
-    le '/' : correspond au chemin de terminaison de notre API ;
-    le (req, res) => res.send('Hello, Express ! 👍') : 
-        * req : correspond a un objet request 
-        * res : response ou reponse de la requete c-a-d l'objet qu'on doit enoyer a notre client depuis express ;
 
 Etape 5 : installation de nodemon avec la commande 'npm install nodemon --save-dev' pour evviter de recharger soit meme le serveur a chaque modification ,
 
@@ -56,22 +49,6 @@ En resume, ce sont comme des fonctions javascript qui ont accès a certains donn
 
 installation d'une Middleware pour ajouter une favIcon : npm install serve-favicon --save
 
-installation d'une Middleware pour la transformation d'une chaine de caractere en JSON : npm install body-parser --save
+installation d une ORM : sequelize avec npm install sequelize --save 
 
-premiere partie terminé ! les chose serieux vont enfin arrivés , j ai hate !!!
-
-- INITIATION A L'UTILISATION DE XAMPP POUR INTERAGIR AVEC ! -
-
-Installation de Xampp , 
-
-c' quoi un ORM : Object Relationnal Mapping , c est une technique de programmation puissante qui permet de convertir des base de donnees avec une language comme javascript
-
-Avantages ORM :
-    * Pas besoins de connaitre le SQL ;
-    * On utilise le JAVASCRIPT ;
-    * Abstraction de la base de données (MariaDB, PostgresQL, SGLite): on peut donc changer de base de données sans changer la requete SQL ;
-    * On manipule de simples objets Javascript ;
-    * Requetes simples : findAll, findOne, etc
-
-choix de l'ORM : sequelize ==> installation : npm install sequelize --save 
-
+installation d une driver pg pour relier notre backend a notre base de données : npm install pg --save
